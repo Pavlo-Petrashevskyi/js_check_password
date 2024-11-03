@@ -12,18 +12,18 @@ describe(`Function 'checkPassword':`, () => {
   });
 
   it(`should return 'true' for the valid password`, () => {
-    expect(checkPassword('G0odP@assword')).toBe(true);
-    expect(checkPassword('!!!NewP@ass12')).toBe(true);
-    expect(checkPassword('Dog@00@@')).toBe(true);
-    expect(checkPassword('CaT10a0!>')).toBe(true);
-    expect(checkPassword('#%$*)6Gj')).toBe(true);
+    expect(checkPassword('G0odP@assword')).toBeTruthy();
+    expect(checkPassword('!!!NewP@ass12')).toBeTruthy();
+    expect(checkPassword('Dog@00@@')).toBeTruthy();
+    expect(checkPassword('CaT10a0!>')).toBeTruthy();
+    expect(checkPassword('#%$*)6Gj')).toBeTruthy();
   });
 
   it(`should return 'false' for the invalid password`, () => {
-    expect(checkPassword('BadPassword')).toBe(false);
-    expect(checkPassword('DOGOG12321#')).toBe(false);
-    expect(checkPassword('12313kjs&&&')).toBe(false);
-    expect(checkPassword('#%$Я*)Gj')).toBe(false);
+    expect(checkPassword('BadPassword')).toBeFalsy();
+    expect(checkPassword('12313kjs&&&')).toBeFalsy();
+    expect(checkPassword('DOGOG12321#')).toBeFalsy();
+    expect(checkPassword('#%$Я*)Gj')).toBeFalsy();
   });
 
   it(`should throw an error if password is not a string`, () => {
